@@ -8,6 +8,14 @@ namespace CroquetAustralia.Logging
 {
     public static class LoggerConfiguration
     {
+        public static void Start(bool isDeveloperMachine)
+        {
+            if (isDeveloperMachine)
+            {
+                SetChainsawLevel(LoggerLevel.Trace);
+            }
+        }
+
         public static void SetChainsawLevel(LoggerLevel minimumLevel)
         {
             SetTargetLevel(

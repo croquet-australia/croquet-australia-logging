@@ -4,7 +4,13 @@ This repository, [croquet-australia-logging](https://github.com/croquet-australi
 
 ## Usage
 
-To start using chainsaw logging (Log2Console):
+To start logging:
+
+```
+LoggerConfiguration.Start();
+```
+
+Each logger's minimum logging level can be configured:
 
 ```
 LoggerConfiguration.SetChainsawLevel(minimumLevel: LoggerLevel.Trace)
