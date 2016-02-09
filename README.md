@@ -7,7 +7,7 @@ This repository, [croquet-australia-logging](https://github.com/croquet-australi
 To start logging:
 
 ```
-LoggerConfiguration.Start();
+LoggerConfiguration.StartLogging();
 ```
 
 Each logger's minimum logging level can be configured:

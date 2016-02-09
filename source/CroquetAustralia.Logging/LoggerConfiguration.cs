@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
@@ -8,47 +7,51 @@ namespace CroquetAustralia.Logging
 {
     public static class LoggerConfiguration
     {
-        public static void Start(bool isDeveloperMachine)
+        internal const string ChainsawTargetName = "Chainsaw";
+        internal const string MemoryTargetName = "Memory";
+
+        public static void StartLogging(bool isDeveloperMachine = false)
         {
-            if (isDeveloperMachine)
+            if (!isDeveloperMachine)
             {
-                SetChainsawLevel(LoggerLevel.Trace);
+                return;
             }
+            SetChainsawLevel(LoggerLevel.Trace);
+            SetMemoryLevel(LoggerLevel.Trace);
         }
 
-        public static void SetChainsawLevel(LoggerLevel minimumLevel)
+        private static void SetChainsawLevel(LoggerLevel minimumLevel)
         {
             SetTargetLevel(
-                "Chainsaw",
+                ChainsawTargetName,
                 ToLogLevel(minimumLevel),
-                targetName => new ChainsawTarget {Name = targetName, Address = "udp://127.0.0.1:7071"});
+                targetName => new ChainsawTarget { Name = targetName, Address = "udp://127.0.0.1:7071" });
+        }
+
+        private static void SetMemoryLevel(LoggerLevel minimumLevel)
+        {
+            SetTargetLevel(
+                MemoryTargetName,
+                ToLogLevel(minimumLevel),
+                targetName => new MemoryTarget { Name = targetName });
         }
 
         private static void SetTargetLevel(string targetName, LogLevel minimumLevel, Func<string, Target> targetFactory)
         {
-            var config = LogManager.Configuration ?? new LoggingConfiguration();
-            var target = config.FindTargetByName(targetName) ?? targetFactory(targetName);
-            var loggingRule = config.LoggingRules.SingleOrDefault(rule => rule.Targets.Single().Name == targetName);
+            var config = LogManager.Configuration ?? (LogManager.Configuration = new LoggingConfiguration());
+            var target = config.FindTargetByName(targetName);
 
-            if (loggingRule == null)
+            if (target != null)
             {
-                config.AddTarget(targetName, target);
-            }
-            else
-            {
-                config.LoggingRules.Remove(loggingRule);
+                throw new NotImplementedException("Changing target level has not been implemented, yet!");
             }
 
+            target = targetFactory(targetName);
+
+            config.AddTarget(target);
             config.LoggingRules.Add(new LoggingRule("*", minimumLevel, target));
 
-            if (LogManager.Configuration == null)
-            {
-                LogManager.Configuration = config;
-            }
-            else
-            {
-                config.Reload();
-            }
+            LogManager.Configuration = config;
         }
 
         private static LogLevel ToLogLevel(LoggerLevel minimumLevel)
