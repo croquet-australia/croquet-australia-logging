@@ -36,8 +36,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Anotar.Custom, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Anotar.Custom.Fody.2.20.0\lib\net35\Anotar.Custom.dll</HintPath>
+    <Reference Include="Anotar.NLog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9d5b24f0733c26f7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Anotar.NLog.Fody.2.20.0\lib\Anotar.NLog.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FluentAssertions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">

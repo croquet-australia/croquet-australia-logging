@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Anotar.Custom;
+using Anotar.NLog;
 using FluentAssertions;
 using NLog;
 using TechTalk.SpecFlow;
@@ -36,13 +36,13 @@ namespace CroquetAustralia.Logging.Specifications.Steps
         [Given(@"I have logged info message '(.*)'")]
         public void GivenIHaveLoggedInfoMessage(string logMessage)
         {
-            GivenLogMessage("Info", logMessage, () => LogTo.Information(logMessage));
+            GivenLogMessage("Info", logMessage, () => LogTo.Info(logMessage));
         }
 
         [Given(@"I have logged warn message '(.*)'")]
         public void GivenIHaveLoggedWarnMessage(string logMessage)
         {
-            GivenLogMessage("Warn", logMessage, () => LogTo.Warning(logMessage));
+            GivenLogMessage("Warn", logMessage, () => LogTo.Warn(logMessage));
         }
 
         [Given(@"I have logged error message '(.*)'")]

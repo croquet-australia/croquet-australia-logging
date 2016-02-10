@@ -16,23 +16,23 @@ namespace CroquetAustralia.Logging
             {
                 return;
             }
-            SetChainsawLevel(LoggerLevel.Trace);
-            SetMemoryLevel(LoggerLevel.Trace);
+            SetChainsawLevel(LogLevel.Trace);
+            SetMemoryLevel(LogLevel.Trace);
         }
 
-        private static void SetChainsawLevel(LoggerLevel minimumLevel)
+        private static void SetChainsawLevel(LogLevel minimumLevel)
         {
             SetTargetLevel(
                 ChainsawTargetName,
-                ToLogLevel(minimumLevel),
+                minimumLevel,
                 targetName => new ChainsawTarget { Name = targetName, Address = "udp://127.0.0.1:7071" });
         }
 
-        private static void SetMemoryLevel(LoggerLevel minimumLevel)
+        private static void SetMemoryLevel(LogLevel minimumLevel)
         {
             SetTargetLevel(
                 MemoryTargetName,
-                ToLogLevel(minimumLevel),
+                minimumLevel,
                 targetName => new MemoryTarget { Name = targetName });
         }
 
@@ -52,11 +52,6 @@ namespace CroquetAustralia.Logging
             config.LoggingRules.Add(new LoggingRule("*", minimumLevel, target));
 
             LogManager.Configuration = config;
-        }
-
-        private static LogLevel ToLogLevel(LoggerLevel minimumLevel)
-        {
-            return LogLevel.FromOrdinal((int) minimumLevel);
         }
     }
 }
