@@ -1,38 +1,37 @@
 {
-    "name": "croquet-australia-logging",
-    "version": "2.1.0",
-    "description": "Logging library for all Croquet Australia resources.",
-    "main": "TODO",
-    "directories": {
-        "test": "tests"
-    },
-    "config": {
-        "msbuild_configuration": "Release"
-    },
-    "scripts": {
-        "build": "npm run clean && npm run compile",
-        "clean": "call ./scripts/Invoke-BuildMagic.cmd clean",
-        "compile": "call ./scripts/Invoke-BuildMagic.cmd compile",
-                
-        "postinstall": "call ./scripts/Invoke-BuildMagic.cmd install-dependencies",
-        "pretest": "npm run build",
-        "test": "call ./scripts/Invoke-BuildMagic.cmd test",
-        "preversion": "npm test",
-        "postversion": "git push && git push --tags"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/croquet-australia/croquet-australia-logging.git"
-    },
-    "author": {
-        "name": "Tim Murphy",
-        "email": "tim@26tp.com",
-        "url": "https://timmurphy.it"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/croquet-australia/croquet-australia-logging/issues"
-    },
-    "homepage": "https://github.com/croquet-australia/croquet-australia-logging#readme",
-    "private": true
+  "name": "croquet-australia-logging",
+  "version": "2.2.0",
+  "description": "Logging library for all Croquet Australia resources.",
+  "main": "TODO",
+  "directories": {
+    "test": "tests"
+  },
+  "config": {
+    "msbuild_configuration": "Release"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "call ./scripts/Invoke-BuildMagic.cmd clean",
+    "compile": "call ./scripts/Invoke-BuildMagic.cmd compile",
+    "postinstall": "call ./scripts/Invoke-BuildMagic.cmd install-dependencies",
+    "pretest": "npm run build",
+    "test": "call ./scripts/Invoke-BuildMagic.cmd test",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/croquet-australia/croquet-australia-logging.git"
+  },
+  "author": {
+    "name": "Tim Murphy",
+    "email": "tim@26tp.com",
+    "url": "https://timmurphy.it"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/croquet-australia/croquet-australia-logging/issues"
+  },
+  "homepage": "https://github.com/croquet-australia/croquet-australia-logging#readme",
+  "private": true
 }
