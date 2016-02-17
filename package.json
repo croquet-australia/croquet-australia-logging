@@ -16,7 +16,9 @@
                 
         "postinstall": "call ./scripts/Invoke-BuildMagic.cmd install-dependencies",
         "pretest": "npm run build",
-        "test": "call ./scripts/Invoke-BuildMagic.cmd test"
+        "test": "call ./scripts/Invoke-BuildMagic.cmd test",
+        "preversion": "npm test",
+        "postversion": "git push && git push --tags"
     },
     "repository": {
         "type": "git",
