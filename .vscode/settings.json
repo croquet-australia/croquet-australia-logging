@@ -1,0 +1,12 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	//-------- Search configuration --------
+
+	// Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the file.exclude setting.
+	"search.exclude": {
+		"**/bin": true,
+		"**/bower_components": true,
+		"**/node_modules": true,
+		"**/packages": true
+	}
+}
