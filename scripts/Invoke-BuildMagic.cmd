@@ -1,1 +1,1 @@
-@powershell -NoProfile -ExecutionPolicy unrestricted -File %~dp0\Invoke-BuildMagic.ps1 %1
+@powershell -NoProfile -ExecutionPolicy unrestricted -File "%~dp0\Invoke-BuildMagic.ps1" %1

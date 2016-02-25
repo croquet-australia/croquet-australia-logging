@@ -36,4 +36,6 @@ TODO: To list all available commands run:
 
 ```shell
 > npm TODO
-``` 
+```
+
+See .\documentation\build-server.md on configuring a build server (continuous integration).
