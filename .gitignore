@@ -7,3 +7,5 @@ packages/
 *.feature.cs
 *.suo
 *.user
+
+npm-debug.log
