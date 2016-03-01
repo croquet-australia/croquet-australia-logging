@@ -13,6 +13,7 @@ See [azure-build-server](https://github.com/timmurphy/azure-build-server) for do
 The Jenkins CI server requires the following plugins:
 
 - [Github plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin)
+- [Multi-Branch Project Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Multi-Branch+Project+Plugin)
 
 ### Chocolatey
 
@@ -27,7 +28,7 @@ The Jenkins CI server requires the following plugins:
 ## Jenkins CI - Create Job
 
 - Name: croquet-australia-logging
-- Freestyle project: Select
+- Select `Multi-Branch Project`
 - Click `OK` button
 - GitHub project: Tick
     - Project url: https://github.com/croquet-australia/croquet-australia-logging
