@@ -1,11 +1,26 @@
-artifacts/
-bin/
-node_modules/
-obj/
-packages/
+# Exclude directories
+#
+# Excluding directories {directory}/* makes overriding
+# (unignoring) files in a directory possible.
+# ----------------------------------------------------
+ 
+**/bin/*
+**/obj/*
+
+artifacts/*
+node_modules/*
+packages/*
+tools/*
+
+# Exclude files
+# ----------------------------------------------------
 
 *.feature.cs
 *.suo
 *.user
 
 npm-debug.log
+
+# Include (override ignore) files
+# ----------------------------------------------------
+!tools/packages.config

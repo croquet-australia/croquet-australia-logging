@@ -20,22 +20,28 @@ More loggers coming soon. Probably :-)
 
 ## Building this solution
 
-After checking out this repository run:
+### Prerequisites
+
+#### Install gulp globally
+
+If you have previously installed a version of gulp globally, please run **`npm remove --global gulp`** to make sure your old version doesn't collide with gulp-cli.
 
 ```shell
-> npm install
+npm install --global gulp-cli
 ```
 
-TODO: To compile & test this solution run:
+#### Install npm packages
 
 ```shell
-> npm build
+npm install
 ```
 
-TODO: To list all available commands run:
+### Clean, Compile & Test
 
-```shell
-> npm TODO
-```
+gulp
+
+### List gulp tasks
+
+todo
 
 See .\documentation\build-server.md on configuring a build server (continuous integration).

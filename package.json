@@ -9,16 +9,6 @@
   "config": {
     "msbuild_configuration": "Release"
   },
-  "scripts": {
-    "build": "npm run clean && npm run compile",
-    "clean": "call ./scripts/Invoke-BuildMagic.cmd clean",
-    "compile": "call ./scripts/Invoke-BuildMagic.cmd compile",
-    "postinstall": "call ./scripts/Invoke-BuildMagic.cmd install-dependencies",
-    "pretest": "npm run build",
-    "test": "call ./scripts/Invoke-BuildMagic.cmd test",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/croquet-australia/croquet-australia-logging.git"
@@ -33,5 +23,23 @@
     "url": "https://github.com/croquet-australia/croquet-australia-logging/issues"
   },
   "homepage": "https://github.com/croquet-australia/croquet-australia-logging#readme",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "app-module-path": "^1.0.5",
+    "del": "^2.2.0",
+    "fs": "0.0.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-install": "^0.6.0",
+    "gulp-msbuild": "^0.3.0",
+    "gulp-nuget": "0.0.3",
+    "gulp-nuget-restore": "^0.4.0",
+    "gulp-util": "^3.0.7",
+    "gulp-xunit-runner": "^0.1.1",
+    "mkdirp": "^0.5.1",
+    "mkdirp-promise": "^1.0.3",
+    "mz": "^2.3.1",
+    "request": "^2.69.0",
+    "request-promise": "^2.0.1",
+    "require-dir": "^0.3.0"
+  }
 }

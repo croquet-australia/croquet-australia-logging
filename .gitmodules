@@ -1,4 +1,0 @@
-[submodule "submodules/BuildMagic"]
-	path = submodules/BuildMagic
-	url = https://github.com/OpenMagic/BuildMagic.git
-	branch = master
